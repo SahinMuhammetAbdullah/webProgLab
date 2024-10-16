@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dikey Açılır Menü</title>
+        <style>
+            nav{
+                margin-top: 10px;
+                width:180px;
+                height:auto;
+            }
+            nav ul{
+                width: 200px;;
+                margin:0;
+                padding:0;
+                list-style-type:none;   
+            }
+            nav li{
+                position: relative;
+            }
+            nav li ul{
+                position:absolute;
+                list-style-type:none;
+                left:199px;
+                width: 200px;;
+                display:none;
+                top:0;
+            }
+            nav li a{
+                height:30px;
+                display: block;
+                text-decoration: none;
+                background-color: #06707e;
+                color:#FFF;
+                font:500 15px Verdana;
+                padding:5px;
+                border:1px solid #000000;
+                text-align: left;
+                line-height: 30px;
+                font-weight:bold; 
+            }
+            nav li a:hover{
+                background-color:#3c94a0;
+                color:#0b1c1f;
+            }
+            nav li:hover ul{
+                display:block;
+            }        
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="https://bil-muhendislik.omu.edu.tr/tr">Anasayfa</a></li>
+                <li><a href="https://bil-muhendislik.omu.edu.tr/tr/hakkimizda">Hakkımızda</a>
+                    <ul>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/hakkimizda/bolumumuz">Bölümünüz</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/hakkimizda/yonetim">Yönetim</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/hakkimizda/komisyonlar">Komisyonlar</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://bil-muhendislik.omu.edu.tr/tr/personel">Personel</a>
+                    <ul>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/personel/ogretim-uyeleri">Öğretim Üyeleri</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/personel/arastirma-gorevlileri">Araştırma Görevlileri</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://bil-muhendislik.omu.edu.tr/tr/egitim">Eğitim</a>                
+                    <ul>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/egitim/lisans">Lisans</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/egitim/yueksek-lisans">Yüksek Lisans</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/egitim/doktora-hesaplamali-bilimler">Doktora</a></li>
+                        <li><a href="https://bil-muhendislik.omu.edu.tr/tr/egitim/laboratuvarlar">Laboratuvarlar</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://kalem.omu.edu.tr/tr/feedbacks/new">İletişim</a></li>
+            </ul>
+        </nav>
+    </body>
+</html>
