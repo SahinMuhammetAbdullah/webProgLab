@@ -1,0 +1,26 @@
+<CATALOG>
+    <NM>
+        <NUMARA>111111</NUMARA>
+        <ADSOYAD>Duygu AKŞEHİR</ADSOYAD>
+        <BOLUM>İstatistik</BOLUM>
+        <SINIF>1</SINIF>
+    </NM>
+    <NM>
+        <NUMARA>222222</NUMARA>
+        <ADSOYAD>Ayşe ÇALIŞKAN</ADSOYAD>
+        <BOLUM>Kimya Mühendisliği</BOLUM>
+        <SINIF>3</SINIF>
+    </NM>
+    <NM>
+        <NUMARA>333333</NUMARA>
+        <ADSOYAD>Semih ARSLAN</ADSOYAD>
+        <BOLUM>Endüstri Mühendisliği</BOLUM>
+        <SINIF>2</SINIF>
+    </NM>
+    <NM>
+        <NUMARA>444444</NUMARA>
+        <ADSOYAD>Mehmet ERKOÇ</ADSOYAD>
+        <BOLUM>Bilgisayar Mühendisliği</BOLUM>
+        <SINIF>4</SINIF>
+    </NM>
+</CATALOG>
