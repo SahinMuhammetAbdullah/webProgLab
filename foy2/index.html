@@ -8,30 +8,59 @@
     <body>
         <h2 style="color:red">Öğrenciye Tıklandığında Bilgilerin Ekrana Getirilmesi</h2>
         <div style="color:red" id="bilgiler"></div>
-        <table border="1">
+        <table border="1" id="studentTable">
             <tr>
                 <th>Numara</th>
                 <th>Ad SOYAD</th>
             </tr>
-            <tr onclick="getStudentInfo(this)">
-                <td>111111</td>
-                <td>Duygu AKŞEHİR</td>
-            </tr>
-            <tr onclick="getStudentInfo(this)">
-                <td>222222</td>
-                <td>Ayşe ÇALIŞKAN</td>
-            </tr>
-            <tr onclick="getStudentInfo(this)">
-                <td>333333</td>
-                <td>Semih ARSLAN</td>
-            </tr>
-            <tr onclick="getStudentInfo(this)">
-                <td>444444</td>
-                <td>Mehmet ERKOÇ</td>
-            </tr>
         </table>
 
         <script>
+        function loadStudentData(xml, rowIndex) {
+            var xmlDoc = xml.responseXML;
+            var info = "<p>Numara: ";
+            var students = xmlDoc.getElementsByTagName("NM");
+
+            info += students[rowIndex].getElementsByTagName("NUMARA")[0].childNodes[0].nodeValue + "</p>";
+            info += "<p>Ad SOYAD: " + students[rowIndex].getElementsByTagName("ADSOYAD")[0].childNodes[0].nodeValue + "</p>";
+            info += "<p>Bölüm: " + students[rowIndex].getElementsByTagName("BOLUM")[0].childNodes[0].nodeValue + "</p>";
+            info += "<p>Sınıf: " + students[rowIndex].getElementsByTagName("SINIF")[0].childNodes[0].nodeValue + "</p>";
+            
+            document.getElementById("bilgiler").innerHTML = info;
+        }
+
+        window.onload = function() {
+            loadStudentsFromXML();
+        };
+
+        function loadStudentsFromXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    populateStudentTable(this);
+                }
+            };
+            xhttp.open("GET", "info.xml", true);
+            xhttp.send();
+        }
+
+        function populateStudentTable(xml) {
+            var xmlDoc = xml.responseXML;
+            var students = xmlDoc.getElementsByTagName("NM");
+            var table = document.getElementById("studentTable");
+
+            for (var i = 0; i < students.length; i++) {
+                var row = table.insertRow();
+                row.onclick = function() { getStudentInfo(this); };
+                
+                var cellNum = row.insertCell(0);
+                var cellName = row.insertCell(1);
+                
+                cellNum.innerHTML = students[i].getElementsByTagName("NUMARA")[0].childNodes[0].nodeValue;
+                cellName.innerHTML = students[i].getElementsByTagName("ADSOYAD")[0].childNodes[0].nodeValue;
+            }
+        }
+
         function getStudentInfo(rowElement) {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -45,19 +74,6 @@
             };
             xhttp.open("GET", "info.xml", true);
             xhttp.send();
-        }
-
-        function loadStudentData(xml, rowIndex) {
-            var xmlDoc = xml.responseXML;
-            var info = "<p>Numara: ";
-            var students = xmlDoc.getElementsByTagName("NM");
-
-            info += students[rowIndex].getElementsByTagName("NUMARA")[0].childNodes[0].nodeValue + "</p>";
-            info += "<p>Ad SOYAD: " + students[rowIndex].getElementsByTagName("ADSOYAD")[0].childNodes[0].nodeValue + "</p>";
-            info += "<p>Bölüm: " + students[rowIndex].getElementsByTagName("BOLUM")[0].childNodes[0].nodeValue + "</p>";
-            info += "<p>Sınıf: " + students[rowIndex].getElementsByTagName("SINIF")[0].childNodes[0].nodeValue + "</p>";
-            
-            document.getElementById("bilgiler").innerHTML = info;
         }
         </script>
     </body>
