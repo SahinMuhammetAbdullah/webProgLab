@@ -14,14 +14,12 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.weblab.project.beans.Employee;
 import com.weblab.project.repostories.EmployeeRepository;
-import com.weblab.project.services.EmployeeService;
 
 @Controller
 public class EmployeeController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
-    EmployeeService employeeService;
 
     @PostMapping("/newEmp")
     Employee newEmployee(@RequestBody Employee newEmployee) {

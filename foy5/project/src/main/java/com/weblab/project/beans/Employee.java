@@ -15,16 +15,16 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer empId;
 
-    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8_bin COLLATE utf8_bin")
+    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin")
     private String empName;
 
-    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8_bin COLLATE utf8_bin")
+    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin")
     private String empPhoneNumber;
 
-    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8_bin COLLATE utf8_bin")
+    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin")
     private String empMail;
 
-    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8_bin COLLATE utf8_bin")
+    @Column(nullable = false, unique = true, columnDefinition = "VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin")
     private String empAddr;
 
     public Integer getEmpId() {
